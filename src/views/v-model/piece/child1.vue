@@ -25,7 +25,7 @@ export default defineComponent({
   setup(props, { attrs, slots, emit }) {
     // const { msg, pro } = toRefs(props);
     // console.log(msg.value, pro.value.h); //steup中查看props得用.value
-
+    console.log(props);
     // -----------------------------------子组件.sync用法--------------------------------------
     const fun = () => {
       emit('update:msg', 25);

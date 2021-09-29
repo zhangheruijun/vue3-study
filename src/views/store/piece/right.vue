@@ -1,0 +1,22 @@
+<template>
+  <div>右边</div>
+</template>
+
+<script lang="ts">
+import {
+  defineComponent,
+  ref,
+  reactive,
+  onBeforeMount,
+  onMounted,
+  toRefs,
+} from 'vue';
+
+export default defineComponent({
+  name: '',
+  setup() {
+    return {};
+  },
+});
+</script>
+<style lang="scss" scoped></style>

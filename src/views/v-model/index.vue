@@ -11,8 +11,14 @@
       this.$attrs)子组件可以改变父组件的值-------------
     </div>
     <div>父页面parent变化(通过attrs改变父组件)---：{{ obj.sex }}</div>
-    <child2 :datas="obj" :cai="{ chang: '属性' }" ref="child2Ref" />
-    <div @click="onParentCHiildren">父组件点击子组件里面的值</div>
+    <child2
+      :datas="obj"
+      :cai="{ chang: '属性' }"
+      sd="457"
+      ref="child2Ref"
+      class="wraps"
+    />
+    <div @click="onParentChildren">父组件点击子组件里面的值</div>
   </div>
 </template>
 
@@ -30,14 +36,14 @@ export default defineComponent({
   components: { Child1, Child2 },
   setup() {
     const user = ref(2);
-    const child2Ref = ref(Child2); //父组件点击子组件里面的函数ref
+    const child2Ref = ref<InstanceType<typeof Child2>>(); //父组件点击子组件里面的函数ref
     const obj = reactive({
       sex: 'attrs变换',
     });
-    const onParentCHiildren = () => {
-      child2Ref?.value.show();
+    const onParentChildren = () => {
+      child2Ref?.value?.show();
     };
-    return { user, obj, child2Ref, onParentCHiildren };
+    return { user, obj, child2Ref, onParentChildren };
   },
 });
 </script>
