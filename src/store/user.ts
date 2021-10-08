@@ -7,7 +7,7 @@ export default {
   mutations: {
     increment(state: any, params:any) {
       // 变更状态
-      state.userName = params
+      state.userName = params.changName
     },
     custState(state: any, params:any) {
       state.userName = params

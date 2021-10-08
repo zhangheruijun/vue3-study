@@ -7,8 +7,12 @@ export default {
   mutations: {
     increment(state: any, params:any) {
       // 变更状态
-      state.userName = params
+      state.userName = params.changName
     },
   },
-  actions: {},
+  actions: {
+    custActions({commit,rootState}: any,actParams: any ){
+      commit('increment',actParams)
+    }
+  },
 }

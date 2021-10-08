@@ -138,6 +138,7 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 });
+console.log(4444);
 let dayRouterLoading = true;  //判断页面是否刷新
 let addListRouter = () => {
   console.log('暂无');

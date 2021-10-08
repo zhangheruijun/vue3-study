@@ -1,5 +1,5 @@
 <template>
-  <div @click="custCommit">左边{{ count }}</div>
+  <div @click="custCommit">左边----{{ count.userName }}</div>
 </template>
 
 <script lang="ts">
@@ -12,7 +12,15 @@ export default defineComponent({
     // console.log(totStore.state.user);
     console.log(totStore);
     const custCommit = () => {
-      totStore.commit('user/increment', '左边改变user');
+      // totStore.commit('user/increment', '左边改变user');
+      totStore.commit({
+        type: 'user/increment',
+        changName: '左边通过--mutations--改变user',
+      });
+      totStore.dispatch({
+        type: 'about/custActions',
+        changName: '左边通过--actions--改变about',
+      });
     };
     return {
       custCommit,
