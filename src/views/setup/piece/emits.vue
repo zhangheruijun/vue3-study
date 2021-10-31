@@ -15,7 +15,7 @@ import {
 export default defineComponent({
   name: 'emits',
   emits: {
-    //可以拦截emit传参函数, 尽量自定义事件不要与原生事件重名\
+    //可以拦截emit传参函数, 尽量自定义事件不要与原生事件重名
     'close-parent': (payload: any) => {
       if (payload) {
         return true;
