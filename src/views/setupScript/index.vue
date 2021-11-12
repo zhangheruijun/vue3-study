@@ -7,13 +7,13 @@
 import { ref,reactive,toRef } from 'vue';
 import Add from './piece/add.vue'
 const info = reactive({name:'张何最实际啊'});
-const addRef = ref<InstanceType<typeof Add>>()
+const addRef = ref(Add)
 function onCustFun(s:string){
   console.log(s);
 }
 //
 function onPanFun(){
-  console.log(addRef.value.comName);
+  console.log(addRef?.value?.comName);
   
 }
 </script>

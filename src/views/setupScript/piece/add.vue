@@ -3,13 +3,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, toRef } from "vue";
-const props = defineProps({
+import { ref, reactive, toRef,onMounted } from "vue";
+defineProps({
   listMap: {
     type: String, //(string也可以是其他你自定义的接口)
     default: '属性',
   },
 });
+onMounted(()=>{
+  console.log('挂在后');
+})
 const comName = ref('我是京津');
 const def = defineEmits(['parentFun'])
 const parentEmit = () => {

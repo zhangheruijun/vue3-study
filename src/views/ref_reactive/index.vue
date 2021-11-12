@@ -51,10 +51,13 @@ export default defineComponent({
       title: 'reactive_名字',
     });
     const arr = reactive([2, 3, 4]); //reactive数组
-    const color = 'blue'; //与style绑定
+    const color = ref('blue'); //与style绑定
     // -----------------------------------------------函数-----------------------------------------
     onMounted(() => {
       console.log(ele.value);
+      setTimeout(()=>{
+        color.value = 'pink'
+      },3000)
     });
     const onRefFun = () => {
       name.value = 'ref赋值';
@@ -82,7 +85,7 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .t-name {
-  color: v-bind('color');
+  color: v-bind(color);
 }
 // >>>和/deep/已弃用。
 // /deep/ .ant-input {
