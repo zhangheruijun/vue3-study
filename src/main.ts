@@ -3,6 +3,8 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 const app = createApp(App)
+import { Button } from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
 app.config.globalProperties.$custType = 'ddd';  //页面中直接使用
 //全局指令
 app.directive('custInst', {
@@ -31,4 +33,4 @@ app.directive('custInst', {
 	// unmounted() { }  //一旦指令被移除，就会调用这个钩子。也只调用一次。
 })
 console.log(app.version);
-app.use(store).use(router).mount("#app");
+app.use(store).use(Button).use(router).mount("#app");
